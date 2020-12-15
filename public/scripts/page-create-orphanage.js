@@ -34,8 +34,6 @@ map.on('click', (event) => {
     .addTo(map)
 })
 
-
-
 // adicionar o campo de fotos
 function addPhotoField() {
     // pegar o container de fotos #images
@@ -60,7 +58,7 @@ function addPhotoField() {
 
 }
 
-function deleteField(event){
+function deleteField(event) {
     const span = event.currentTarget
 
     const fieldsContainer = document.querySelectorAll('.new-upload')
@@ -73,5 +71,27 @@ function deleteField(event){
 
     // deletar o campo
     span.parentNode.remove();
+
+}
+
+//selecionar o sim ou nao
+function toggleSelect(event) {
+    
+    // retirar a class .active (dos botoes)
+    document.querySelectorAll('.button-select button')
+    .forEach(function(button) {
+        button.classList.remove('active')
+    })
+
+    // colocar a class .active nesse botao clicado
+    const button = event.currentTarget
+    button.classList.add('active')
+
+    //atualizar o meu input hidden com valor selecionado
+    const input = document.querySelector('[name="open_on_weekends"]')
+    
+    // pegar o botao clicado
+    // veririficar se sim ou nao
+    input.value = button.dataset.value
 
 }
