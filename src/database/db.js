@@ -8,7 +8,7 @@ function execute(db){
             lng TEXT,
             name TEXT,
             about TEXT,
-            whastsapp TEXT,
+            whatsapp TEXT,
             images TEXT, 
             instructions TEXT,
             opening_hours TEXT,
